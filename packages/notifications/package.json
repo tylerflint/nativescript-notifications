@@ -1,6 +1,6 @@
 {
 	"name": "@badideas/nativescript-notifications",
-	"version": "5.0.1",
+	"version": "5.0.2",
 	"description": "Create notifications from within your app",
 	"main": "index",
 	"typings": "index.d.ts",

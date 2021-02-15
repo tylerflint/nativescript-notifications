@@ -65,6 +65,49 @@
 				}
 			}
 		},
+		"notifications": {
+			"root": "packages/notifications",
+			"sourceRoot": "packages/notifications",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:package",
+					"options": {
+						"outputPath": "dist/packages/notifications",
+						"tsConfig": "packages/notifications/tsconfig.json",
+						"packageJson": "packages/notifications/package.json",
+						"main": "packages/notifications/index.ts",
+						"assets": [
+							"packages/notifications/*.md",
+							"packages/notifications/index.d.ts",
+							"LICENSE",
+							{
+								"glob": "**/*",
+								"input": "packages/notifications/platforms/",
+								"output": "./platforms/"
+							}
+						]
+					}
+				},
+				"build.all": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx run notifications:build", "node tools/scripts/build-finish.ts notifications"],
+						"parallel": false
+					}
+				},
+				"focus": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx g @nativescript/plugin-tools:focus-packages notifications"],
+						"parallel": false
+					}
+				}
+			}
+		},
 		"all": {
 			"root": "packages/",
 			"projectType": "library",

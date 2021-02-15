@@ -1,4 +1,4 @@
-# NativeScript Local Notifications Plugin
+# NativeScript Notifications Plugin
 
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][npm-url]
@@ -7,8 +7,9 @@
 [npm-url]: https://npmjs.org/package/@badideas/nativescript-notifications
 [downloads-image]: http://img.shields.io/npm/dm/@badideas/nativescript-notifications.svg
 
-The Local Notifications plugin allows your app to show notifications when the app is not running.
-Just like remote push notifications, but a few orders of magnitude easier to set up.
+This is a fork of the [Nativescript Local Notifications Plugin](https://github.com/NativeScript/plugins/tree/master/packages/local-notifications). The eventual goal of this project will be to create a comprehensive plugin for managing local and push notifications, without the need for two distinct packages and hacking the shared delegate for ios.
+
+In it's current state this plugin allows your app to show notifications from within the app.
 
 ## Installation
 

@@ -332,6 +332,7 @@ export class LocalNotificationsImpl extends LocalNotificationsCommon implements 
 			try {
 				if (LocalNotificationsImpl.isUNUserNotificationCenterAvailable()) {
 					UNUserNotificationCenter.currentNotificationCenter().removePendingNotificationRequestsWithIdentifiers(<any>['' + id]);
+					UNUserNotificationCenter.currentNotificationCenter().removeDeliveredNotifications(<any>['' + id]);
 					resolve(true);
 				} else {
 					const scheduled = UIApplication.sharedApplication.scheduledLocalNotifications;
@@ -357,6 +358,7 @@ export class LocalNotificationsImpl extends LocalNotificationsCommon implements 
 			try {
 				if (LocalNotificationsImpl.isUNUserNotificationCenterAvailable()) {
 					UNUserNotificationCenter.currentNotificationCenter().removeAllPendingNotificationRequests();
+					UNUserNotificationCenter.currentNotificationCenter().removeAllDeliveredNotifications();
 				} else {
 					UIApplication.sharedApplication.cancelAllLocalNotifications();
 				}
